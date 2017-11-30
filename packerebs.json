@@ -21,7 +21,7 @@
   "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "centos",
   "ami_name": "packer-ebs{{timestamp}}",
-  "encrypted": true,
+  "encrypt_boot": true,
     "launch_block_device_mappings": [
     {
       "device_name": "/dev/sda1",
@@ -29,15 +29,20 @@
       "volume_type": "gp2",
       "delete_on_termination": true
       
-    },
+    }
+     ],
+ "ami_block_device_mappings": [
+                
       {
       "device_name": "/dev/sda2",
       "volume_size": 40,
       "volume_type": "gp2",
+       "encrypted": true,
       "delete_on_termination": true
       
     }
   ],
+ 
   "tags": {
   "Name": "test-packer-EBS{{timestamp}}",
   "Application": "DevOps"
