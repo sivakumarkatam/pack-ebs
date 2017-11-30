@@ -16,7 +16,7 @@ echo "=========Drive Added===="
 pwd
 cd /data/
 mkdir -p /data/ebsnew/
-df -h
+df -h | grep data
 lsblk
 pwd
 cd /data/ebsnew/
