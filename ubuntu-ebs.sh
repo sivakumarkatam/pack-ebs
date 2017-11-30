@@ -6,7 +6,7 @@ echo "=========Drive========="
 mkdir /newdata
 #Format the drive
 sudo mkfs -t ext4 /dev/xvdb
-#Adding entry in fstab reboot mount
+#Adding entry in fstab reboot mount 
 echo "/dev/xvdb       /newdata   auto    defaults,noatime     0       0" >> /etc/fstab
 
 echo "=========Drive Added===="
