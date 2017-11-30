@@ -3,6 +3,7 @@
     "aws_access_key": "",
     "aws_secret_key": "",
     "aws_session_token": "",
+    "kms_key_prod": "{{env `kms_key_prod`}}",
     "aws-region": "",
     "aws-vpc_id": "",
     "aws-subnet_id": ""
@@ -15,6 +16,7 @@
   "secret_key": "{{user `aws_secret_key`}}",
   "token": "{{user `aws_session_token`}}",
   "kms_key_id": "c6da4cdf-b2bc-4d58-b2e2-96e7547157bb",
+  "region_kms_key_ids": "ap-southeast-1",
   "region": "{{user `aws-region`}}",
   "source_ami": "ami-cd49deae",
   "instance_type": "t2.micro",
