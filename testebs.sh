@@ -18,9 +18,9 @@ cd /data/
 mkdir -p /data/ebsnew/
 df -h | grep data
 lsblk
-pwd
+#pwd
 cd /data/ebsnew/
-pwd
+#pwd
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 ls
 echo "done"
