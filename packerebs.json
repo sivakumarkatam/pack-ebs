@@ -20,17 +20,23 @@
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "centos",
-  "ami_name": "APG-Stage-API{{timestamp}}",
+  "ami_name": "packer-ebs{{timestamp}}",
     "launch_block_device_mappings": [
     {
       "device_name": "/dev/sda1",
       "volume_size": 60,
       "volume_type": "gp2",
       "delete_on_termination": true
+    },
+      {
+      "device_name": "/dev/sda2",
+      "volume_size": 40,
+      "volume_type": "gp2",
+      "delete_on_termination": true
     }
   ],
   "tags": {
-  "Name": "test-packer-EBS",
+  "Name": "test-packer-EBS{{timestamp}}",
   "Application": "DevOps"
 }
 }],
