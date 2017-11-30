@@ -1,7 +1,7 @@
 sudo su -
 echo "starting ebs volume"
 lsblk
-dh -h
+df -h
 echo "=========Drive========="
 #Create Mount Directory
 mkdir /data
