@@ -8,15 +8,11 @@
     "aws-vpc_id": "",
     "aws-subnet_id": ""
   },
-
- 
-"builders": [{
+ "builders": [{
   "type": "amazon-ebs",
   "access_key": "{{user `aws_access_key`}}",
   "secret_key": "{{user `aws_secret_key`}}",
   "token": "{{user `aws_session_token`}}",
-  "kms_key_id": "c6da4cdf-b2bc-4d58-b2e2-96e7547157bb",
-  "region_kms_key_ids": "ap-southeast-1",
   "region": "{{user `aws-region`}}",
   "source_ami": "ami-cd49deae",
   "instance_type": "t2.micro",
@@ -24,6 +20,7 @@
   "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "centos",
   "ami_name": "packer-ebs{{timestamp}}",
+  "kms_key_id": "c6da4cdf-b2bc-4d58-b2e2-96e7547157bb",
    "launch_block_device_mappings": [
     {
       "device_name": "/dev/sda1",
