@@ -4,22 +4,25 @@ lsblk
 df -h
 echo "=========Drive========="
 #Create Mount Directory
-mkdir /data
+mkdir /newdata
 #Format the drive
 sudo mkfs -t ext4 /dev/xvdb
+#mount
+mount -L /dev/xvdb /newdata
 #Adding entry in fstab reboot mount
-echo "/dev/xvdb       /data   auto    defaults,noatime     0       0" >> /etc/fstab
+echo "LABEL=/dev/xvdb       /newdata   ext4    defaults     0       0" >> /etc/fstab
 
 echo "=========Drive Added===="
 
 #Change to New Drive
 pwd
-cd /data/
-mkdir -p /data/ebsnew/
-df -h | grep data
+#cd /newdata/
+mkdir -p /newdata/ebsnew/
+df -h
+df -h | grep newdata
 lsblk
 #pwd
-cd /data/ebsnew/
+cd /newdata/ebsnew/
 #pwd
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 ls
