@@ -8,10 +8,13 @@ mkdir /newdata
 #Format the drive
 sudo mkfs -t ext4 /dev/xvdb
 #mount
-mount -L /dev/xvdb /newdata
+#mount -L /dev/xvdb /newdata
 #Adding entry in fstab reboot mount
-echo "LABEL=/dev/xvdb       /newdata   ext4    defaults     0       0" >> /etc/fstab
+blkid > ne
+cat ne | grep /dev/xvdb |awk '{ print $2 }' | cut -f2 -d"=" | sed 's/.$//; s/^.//'
+echo "UUID=$uid /newdata               ext4      defaults     0 0" >> /etc/fstab
 
+mount /newdata
 echo "=========Drive Added===="
 
 #Change to New Drive
