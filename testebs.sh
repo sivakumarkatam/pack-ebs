@@ -13,11 +13,14 @@ echo "/dev/xvdb       /data   auto    defaults,noatime     0       0" >> /etc/fs
 echo "=========Drive Added===="
 
 #Change to New Drive
+pwd
 cd /data/
 mkdir -p /data/ebsnew/
 df -h
 lsblk
+pwd
 cd /data/ebsnew/
+pwd
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 ls
 echo "done"
