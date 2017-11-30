@@ -11,9 +11,10 @@ sudo mkfs -t ext4 /dev/xvdb
 #mount -L /dev/xvdb /newdata
 #Adding entry in fstab reboot mount
 blkid > ne
-cat ne | grep /dev/xvdb |awk '{ print $2 }' | cut -f2 -d"=" | sed 's/.$//; s/^.//'
+cat ne
+uid=$(cat ne | grep /dev/xvdb |awk '{ print $2 }' | cut -f2 -d"=" | sed 's/.$//; s/^.//')
 echo "UUID=$uid /newdata               ext4      defaults     0 0" >> /etc/fstab
-
+echo $uid
 mount /newdata
 echo "=========Drive Added===="
 
