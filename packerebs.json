@@ -21,7 +21,6 @@
   "ssh_username": "centos",
   "ami_name": "packer-ebs{{timestamp}}",
   "kms_key_id": "{{user `kms_key_prod`}}",
-  "encrypted": true,
   "launch_block_device_mappings": [
     {
       "device_name": "/dev/sda1",
