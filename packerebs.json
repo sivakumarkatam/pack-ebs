@@ -20,12 +20,12 @@
   "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "centos",
   "ami_name": "packer-ebs{{timestamp}}",
-  "kms_key_id": "{{user `kms_key_prod`}}",
    "launch_block_device_mappings": [
     {
       "device_name": "/dev/sda1",
       "volume_size": 60,
       "volume_type": "gp2",
+      "encrypted": true,
       "delete_on_termination": true
       
     }
@@ -41,7 +41,7 @@
       
     }
   ],
- 
+  "kms_key_id": "{{user `kms_key_prod`}}",
   "tags": {
   "Name": "test-packer-EBS{{timestamp}}",
   "Application": "DevOps"
