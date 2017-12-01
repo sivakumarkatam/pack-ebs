@@ -26,6 +26,7 @@
       "volume_size": 60,
       "volume_type": "gp2",
       "encrypted": true,
+     "kms_key_id": "{{user `kms_key_prod`}}",
       "delete_on_termination": true
       
     }
@@ -37,11 +38,11 @@
       "volume_size": 40,
       "volume_type": "gp2",
        "encrypted": true,
+       "kms_key_id": "{{user `kms_key_prod`}}",
       "delete_on_termination": true
       
     }
   ],
-  "sse_kms_key_id": "{{user `kms_key_prod`}}",
   "tags": {
   "Name": "test-packer-EBS{{timestamp}}",
   "Application": "DevOps"
