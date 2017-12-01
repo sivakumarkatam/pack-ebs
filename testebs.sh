@@ -6,14 +6,15 @@ echo "=========Drive========="
 #Create Mount Directory
 mkdir /newdata
 #Format the drive
-sudo mke2fs -t xfs /dev/xvdb
+sudo mkfs -t ext4 /dev/xvdb
 #mount
 #mount -L /dev/xvdb /newdata
 #Adding entry in fstab reboot mount
+echo "display blkid file"
 blkid > ne
 cat ne
 uid=$(cat ne | grep /dev/xvdb |awk '{ print $2 }' | cut -f2 -d"=" | sed 's/.$//; s/^.//')
-echo "UUID=$uid /newdata               xfs      defaults     0 0" >> /etc/fstab
+echo "UUID=$uid /newdata               ext4      defaults     0 0" >> /etc/fstab
 echo $uid
 mount /newdata
 echo "=========Drive Added===="
