@@ -35,8 +35,7 @@
       "device_name": "/dev/sda2",
       "volume_size": 40,
       "volume_type": "gp2",
-       "encrypted": true,
-       "delete_on_termination": true
+      "delete_on_termination": true
       
     }
   ],
