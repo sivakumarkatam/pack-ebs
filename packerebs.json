@@ -22,7 +22,7 @@
   "ami_name" : "packer-ebs{{timestamp}}",
   "kms_key_id" : "{{user `kms_key_prod`}}",
   "encrypt_boot": true,
-  "launch_block_device_mappings": [
+  "ami_block_device_mappings": [
     {
       "device_name": "/dev/sda1",
       "volume_size": 60,
@@ -30,7 +30,7 @@
       "delete_on_termination": true
      }
      ],
-  "launch_block_device_mappings": [     
+  "ami_block_device_mappings": [     
       {
       "device_name": "/dev/sda2",
       "volume_size": 40,
